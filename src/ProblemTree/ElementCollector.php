@@ -35,13 +35,21 @@ class ElementCollector extends ProblemVisitor
 	 */
 	private $elementParent = [];
 
+	/**
+	 * @var Element[]
+	 */
+	private $queue = [];
+
 
 
 	public function collect(Element $rootElement)
 	{
 		$this->elementsList = $this->elementTypes = $this->elementParent = [];
 
-		$rootElement->accept($this);
+		$this->queue = [$rootElement];
+		while ($element = array_shift($this->queue)) {
+			$element->accept($this);
+		}
 
 		return new CollectionResult($this->elementsList, $this->elementTypes, $this->elementParent);
 	}
@@ -101,6 +109,7 @@ class ElementCollector extends ProblemVisitor
 		if ($element instanceof ElementContainer) {
 			foreach ($element->getElements() as $child) {
 				$this->elementParent[self::id($child)] = $element;
+				$this->queue[] = $child;
 			}
 		}
 	}
