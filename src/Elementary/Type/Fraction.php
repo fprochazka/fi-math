@@ -4,7 +4,7 @@ namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigRational;
 use FiMath\Element;
-use FiMath\ProblemTreeVisitor;
+use FiMath\ProblemVisitor;
 
 
 
@@ -64,7 +64,7 @@ class Fraction implements Element
 
 
 
-	public function accept(ProblemTreeVisitor $visitor)
+	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitFraction($this);
 	}

@@ -4,7 +4,7 @@ namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigNumber;
 use FiMath\Element;
-use FiMath\ProblemTreeVisitor;
+use FiMath\ProblemVisitor;
 
 
 
@@ -45,7 +45,7 @@ class Decimal implements Element
 
 
 
-	public function accept(ProblemTreeVisitor $visitor)
+	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitDecimal($this);
 	}

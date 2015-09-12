@@ -10,14 +10,14 @@ use FiMath\Elementary\Type\Fraction;
 use FiMath\Elementary\Type\Multiplication;
 use FiMath\Elementary\Type\Subtraction;
 use FiMath\ElementContainer;
-use FiMath\ProblemTreeVisitor;
+use FiMath\ProblemVisitor;
 
 
 
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class ElementCollector extends ProblemTreeVisitor
+class ElementCollector extends ProblemVisitor
 {
 
 	/**

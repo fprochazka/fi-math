@@ -4,7 +4,7 @@ namespace FiMath\Elementary\Type;
 
 use FiMath\Elementary\Behaviour\BinaryOperation;
 use FiMath\ElementContainer;
-use FiMath\ProblemTreeVisitor;
+use FiMath\ProblemVisitor;
 
 
 
@@ -18,7 +18,7 @@ class Division implements ElementContainer
 
 
 
-	public function accept(ProblemTreeVisitor $visitor)
+	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitDivision($this);
 	}

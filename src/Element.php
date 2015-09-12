@@ -12,6 +12,6 @@ namespace FiMath;
 interface Element
 {
 
-	public function accept(ProblemTreeVisitor $visitor);
+	public function accept(ProblemVisitor $visitor);
 
 }

@@ -5,7 +5,7 @@ namespace FiMath\Elementary\Type;
 use FiMath\Element;
 use FiMath\Elementary\Behaviour\BinaryOperation;
 use FiMath\ElementContainer;
-use FiMath\ProblemTreeVisitor;
+use FiMath\ProblemVisitor;
 
 
 
@@ -19,7 +19,7 @@ class Addition implements ElementContainer
 
 
 
-	public function accept(ProblemTreeVisitor $visitor)
+	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitAddition($this);
 	}

@@ -14,7 +14,7 @@ use FiMath\Elementary\Type\Subtraction;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-abstract class ProblemTreeVisitor
+abstract class ProblemVisitor
 {
 
 	public function visitDecimal(Decimal $decimal)
