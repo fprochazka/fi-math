@@ -80,7 +80,7 @@ class CollectionResult
 	 * @param object $object
 	 * @return string
 	 */
-	private static function id($object)
+	public static function id($object)
 	{
 		return spl_object_hash($object);
 	}
