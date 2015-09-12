@@ -18,6 +18,9 @@
     "autoload": {
         "psr-4": {
             "FiMath\\": "src/"
-        }
+        },
+        "classmap": [
+            "src/exceptions.php"
+        ]
     }
 }

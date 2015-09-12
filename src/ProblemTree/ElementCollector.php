@@ -1,13 +1,16 @@
 <?php
 
-namespace FiMath;
+namespace FiMath\ProblemTree;
 
+use FiMath\Element;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
 use FiMath\Elementary\Type\Division;
 use FiMath\Elementary\Type\Fraction;
 use FiMath\Elementary\Type\Multiplication;
 use FiMath\Elementary\Type\Subtraction;
+use FiMath\ElementContainer;
+use FiMath\ProblemTreeVisitor;
 
 
 
@@ -34,44 +37,13 @@ class ElementCollector extends ProblemTreeVisitor
 
 
 
-	public function collect(Problem $problem)
+	public function collect(Element $rootElement)
 	{
 		$this->elementsList = $this->elementTypes = $this->elementParent = [];
-		foreach ($problem->getProblemTrees() as $rootElement) {
-			$rootElement->accept($this);
-		}
-	}
 
+		$rootElement->accept($this);
 
-
-	public function hasType($type)
-	{
-		return !empty($this->elementTypes[$type]);
-	}
-
-
-
-	/**
-	 * @param string $type
-	 * @return array|Element[]
-	 */
-	public function getByType($type)
-	{
-		return isset($this->elementTypes[$type]) ? $this->elementTypes[$type] : [];
-	}
-
-
-
-	/**
-	 * @param Element $element
-	 * @return \Generator|Element[]
-	 */
-	public function getParents(Element $element)
-	{
-		while (isset($this->elementParent[$id = self::id($element)])) {
-			$element = $this->elementParent[$id];
-			yield $element;
-		}
+		return new CollectionResult($this->elementsList, $this->elementTypes, $this->elementParent);
 	}
 
 
