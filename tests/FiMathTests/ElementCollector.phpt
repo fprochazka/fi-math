@@ -41,7 +41,7 @@ class ElementCollectorTest extends Tester\TestCase
 
 	public function testCollectAddition()
 	{
-		$el = new Addition($one = new Decimal(1), $two = new Decimal(2));
+		$el = new Addition($one = new Decimal('1'), $two = new Decimal('2'));
 		$elId = CollectionResult::id($el);
 		$oneId = CollectionResult::id($one);
 		$twoId = CollectionResult::id($two);

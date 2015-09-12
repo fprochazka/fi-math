@@ -29,7 +29,7 @@ class CollectionResultTest extends Tester\TestCase
 		Assert::same([], $result->getByType(Decimal::class));
 
 		Assert::exception(function () use ($result) {
-			iterator_to_array($result->getParents(new Decimal(1)));
+			iterator_to_array($result->getParents(new Decimal('1')));
 		}, FiMath\InvalidArgumentException::class, 'The given element is not in this result');
 	}
 
