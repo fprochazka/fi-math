@@ -51,7 +51,7 @@ class ElementCollector extends ProblemVisitor
 			$element->accept($this);
 		}
 
-		return new CollectionResult($this->elementsList, $this->elementTypes, $this->elementParent);
+		return new CollectionResult($rootElement, $this->elementsList, $this->elementTypes, $this->elementParent);
 	}
 
 

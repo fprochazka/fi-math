@@ -24,7 +24,7 @@ class CollectionResultTest extends Tester\TestCase
 
 	public function testEmpty()
 	{
-		$result = new CollectionResult([], [], []);
+		$result = new CollectionResult(new Decimal('0'), [], [], []);
 		Assert::false($result->hasType(Decimal::class));
 		Assert::same([], $result->getByType(Decimal::class));
 

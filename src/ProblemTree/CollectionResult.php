@@ -15,6 +15,11 @@ class CollectionResult
 {
 
 	/**
+	 * @var Element
+	 */
+	private $root;
+
+	/**
 	 * @var Element[] {Id => Element}
 	 */
 	private $list;
@@ -31,11 +36,22 @@ class CollectionResult
 
 
 
-	public function __construct(array $elementsList, array $elementTypes, array $elementParents)
+	public function __construct(Element $root, array $elementsList, array $elementTypes, array $elementParents)
 	{
+		$this->root = $root;
 		$this->list = $elementsList;
 		$this->types = $elementTypes;
 		$this->parents = $elementParents;
+	}
+
+
+
+	/**
+	 * @return Element
+	 */
+	public function getRoot()
+	{
+		return $this->root;
 	}
 
 

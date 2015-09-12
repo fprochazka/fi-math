@@ -46,7 +46,7 @@ class ElementCollectorTest extends Tester\TestCase
 		$oneId = CollectionResult::id($one);
 		$twoId = CollectionResult::id($two);
 
-		$expectedResult = new CollectionResult([
+		$expectedResult = new CollectionResult($el, [
 			$elId => $el,
 			$oneId => $one,
 			$twoId => $two
