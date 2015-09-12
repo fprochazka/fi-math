@@ -56,6 +56,16 @@ class CollectionResult
 
 
 
+	/**
+	 * @return \FiMath\Element[]
+	 */
+	public function getAllElements()
+	{
+		return array_values($this->list);
+	}
+
+
+
 	public function hasType($type)
 	{
 		return !empty($this->types[$type]);
