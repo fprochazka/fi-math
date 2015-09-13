@@ -15,7 +15,7 @@ interface Problem
 	/**
 	 * A problem can have more than one problem tree.
 	 *
-	 * @return Element[]
+	 * @return Node[]
 	 */
 	public function getProblemTrees();
 

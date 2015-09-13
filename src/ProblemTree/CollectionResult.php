@@ -2,8 +2,7 @@
 
 namespace FiMath\ProblemTree;
 
-use FiMath\Element;
-use FiMath\ElementContainer;
+use FiMath\Node;
 use FiMath\InvalidArgumentException;
 
 
@@ -15,28 +14,28 @@ class CollectionResult
 {
 
 	/**
-	 * @var Element
+	 * @var Node
 	 */
 	private $root;
 
 	/**
-	 * @var Element[] {Id => Element}
+	 * @var Node[] {Id => Node}
 	 */
 	private $list;
 
 	/**
-	 * @var Element[][] {Type => Element[]}
+	 * @var Node[][] {Type => Node[]}
 	 */
 	private $types;
 
 	/**
-	 * @var ElementContainer[] {Id => ElementContainer}
+	 * @var Node[] {Id => Node}
 	 */
 	private $parents;
 
 
 
-	public function __construct(Element $root, array $elementsList, array $elementTypes, array $elementParents)
+	public function __construct(Node $root, array $elementsList, array $elementTypes, array $elementParents)
 	{
 		$this->root = $root;
 		$this->list = $elementsList;
@@ -47,7 +46,7 @@ class CollectionResult
 
 
 	/**
-	 * @return Element
+	 * @return Node
 	 */
 	public function getRoot()
 	{
@@ -57,7 +56,7 @@ class CollectionResult
 
 
 	/**
-	 * @return \FiMath\Element[]
+	 * @return \FiMath\Node[]
 	 */
 	public function getAllElements()
 	{
@@ -75,7 +74,7 @@ class CollectionResult
 
 	/**
 	 * @param string $type
-	 * @return array|Element[]
+	 * @return array|Node[]
 	 */
 	public function getByType($type)
 	{
@@ -85,10 +84,10 @@ class CollectionResult
 
 
 	/**
-	 * @param Element $element
-	 * @return \Generator|Element[]
+	 * @param Node $element
+	 * @return \Generator|Node[]
 	 */
-	public function getParents(Element $element)
+	public function getParents(Node $element)
 	{
 		if (!isset($this->list[$id = self::id($element)])) {
 			throw new InvalidArgumentException('The given element is not in this result');

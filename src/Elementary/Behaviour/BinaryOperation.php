@@ -2,7 +2,7 @@
 
 namespace FiMath\Elementary\Behaviour;
 
-use FiMath\Element;
+use FiMath\Node;
 
 
 
@@ -13,18 +13,18 @@ trait BinaryOperation
 {
 
 	/**
-	 * @var Element
+	 * @var Node
 	 */
 	private $left;
 
 	/**
-	 * @var Element
+	 * @var Node
 	 */
 	private $right;
 
 
 
-	public function __construct(Element $left, Element $right)
+	public function __construct(Node $left, Node $right)
 	{
 		$this->left = $left;
 		$this->right = $right;
@@ -33,7 +33,7 @@ trait BinaryOperation
 
 
 	/**
-	 * @return Element
+	 * @return Node
 	 */
 	public function getLeft()
 	{
@@ -43,7 +43,7 @@ trait BinaryOperation
 
 
 	/**
-	 * @return Element
+	 * @return Node
 	 */
 	public function getRight()
 	{
@@ -52,7 +52,7 @@ trait BinaryOperation
 
 
 
-	public function getElements()
+	public function getChildNodes()
 	{
 		return [
 			$this->getLeft(),

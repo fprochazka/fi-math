@@ -2,14 +2,13 @@
 
 namespace FiMath\ProblemTree;
 
-use FiMath\Element;
+use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
 use FiMath\Elementary\Type\Division;
 use FiMath\Elementary\Type\Fraction;
 use FiMath\Elementary\Type\Multiplication;
 use FiMath\Elementary\Type\Subtraction;
-use FiMath\ElementContainer;
 use FiMath\ProblemVisitor;
 
 
@@ -17,38 +16,38 @@ use FiMath\ProblemVisitor;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class ElementCollector extends ProblemVisitor
+class NodeCollector extends ProblemVisitor
 {
 
 	/**
-	 * @var Element[] {Id => Element}
+	 * @var Node[] {Id => Node}
 	 */
 	private $elementsList = [];
 
 	/**
-	 * @var Element[][] {Type => Element[]}
+	 * @var Node[][] {Type => Node[]}
 	 */
 	private $elementTypes = [];
 
 	/**
-	 * @var ElementContainer[] {Id => ElementContainer}
+	 * @var Node[] {Id => Node}
 	 */
 	private $elementParent = [];
 
 	/**
-	 * @var Element[]
+	 * @var Node[]
 	 */
 	private $queue = [];
 
 
 
-	public function collect(Element $rootElement)
+	public function collect(Node $rootElement)
 	{
 		$this->elementsList = $this->elementTypes = $this->elementParent = [];
 
 		$this->queue = [$rootElement];
 		while ($element = array_shift($this->queue)) {
-			/** @var Element $element */
+			/** @var Node $element */
 			$element->accept($this);
 		}
 
@@ -99,7 +98,7 @@ class ElementCollector extends ProblemVisitor
 
 
 
-	private function insertElement(Element $element)
+	private function insertElement(Node $element)
 	{
 		$this->elementsList[$id = self::id($element)] = $element;
 
@@ -107,11 +106,9 @@ class ElementCollector extends ProblemVisitor
 			$this->elementTypes[$type][$id] = $element;
 		}
 
-		if ($element instanceof ElementContainer) {
-			foreach ($element->getElements() as $child) {
-				$this->elementParent[self::id($child)] = $element;
-				$this->queue[] = $child;
-			}
+		foreach ($element->getChildNodes() as $child) {
+			$this->elementParent[self::id($child)] = $element;
+			$this->queue[] = $child;
 		}
 	}
 

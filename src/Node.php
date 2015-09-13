@@ -9,9 +9,20 @@ namespace FiMath;
  *
  * @author Filip Procházka <filip@prochazka.su>
  */
-interface Element
+interface Node
 {
 
+	/**
+	 * @param ProblemVisitor $visitor
+	 * @return void
+	 */
 	public function accept(ProblemVisitor $visitor);
+
+
+
+	/**
+	 * @return Node[]
+	 */
+	public function getChildNodes();
 
 }

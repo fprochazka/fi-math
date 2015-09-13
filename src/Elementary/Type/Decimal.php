@@ -3,7 +3,7 @@
 namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigNumber;
-use FiMath\Element;
+use FiMath\Node;
 use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\ProblemVisitor;
 
@@ -12,7 +12,7 @@ use FiMath\ProblemVisitor;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class Decimal implements Element, RealNumber
+class Decimal implements Node, RealNumber
 {
 
 	/**
@@ -49,6 +49,13 @@ class Decimal implements Element, RealNumber
 	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitDecimal($this);
+	}
+
+
+
+	public function getChildNodes()
+	{
+		return [];
 	}
 
 }

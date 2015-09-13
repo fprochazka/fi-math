@@ -3,7 +3,7 @@
 namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigRational;
-use FiMath\Element;
+use FiMath\Node;
 use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\ProblemVisitor;
 
@@ -12,7 +12,7 @@ use FiMath\ProblemVisitor;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class Fraction implements Element, RealNumber
+class Fraction implements Node, RealNumber
 {
 
 	/**
@@ -65,6 +65,13 @@ class Fraction implements Element, RealNumber
 	public function accept(ProblemVisitor $visitor)
 	{
 		$visitor->visitFraction($this);
+	}
+
+
+
+	public function getChildNodes()
+	{
+		return [];
 	}
 
 }

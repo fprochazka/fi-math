@@ -6,12 +6,11 @@
 
 namespace KdybyTests\FiMath;
 
-use FiMath\Element;
+use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
-use FiMath\ElementContainer;
 use FiMath\ProblemTree\CollectionResult;
-use FiMath\ProblemTree\ElementCollector;
+use FiMath\ProblemTree\NodeCollector;
 use Tester;
 use Tester\Assert;
 
@@ -22,11 +21,11 @@ require_once __DIR__ . '/../bootstrap.php';
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class ElementCollectorTest extends Tester\TestCase
+class NodeCollectorTest extends Tester\TestCase
 {
 
 	/**
-	 * @var \FiMath\ProblemTree\ElementCollector
+	 * @var NodeCollector
 	 */
 	private $collector;
 
@@ -34,7 +33,7 @@ class ElementCollectorTest extends Tester\TestCase
 
 	protected function setUp()
 	{
-		$this->collector = new \FiMath\ProblemTree\ElementCollector();
+		$this->collector = new NodeCollector();
 	}
 
 
@@ -54,10 +53,7 @@ class ElementCollectorTest extends Tester\TestCase
 			Addition::class => [
 				$elId => $el,
 			],
-			ElementContainer::class => array(
-				$elId => $el,
-			),
-			Element::class => array(
+			Node::class => array(
 				$elId => $el,
 				$oneId => $one,
 				$twoId => $two
@@ -76,4 +72,4 @@ class ElementCollectorTest extends Tester\TestCase
 
 }
 
-(new ElementCollectorTest())->run();
+(new NodeCollectorTest())->run();
