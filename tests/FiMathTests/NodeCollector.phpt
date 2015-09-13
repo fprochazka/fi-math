@@ -6,6 +6,7 @@
 
 namespace KdybyTests\FiMath;
 
+use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
@@ -53,15 +54,19 @@ class NodeCollectorTest extends Tester\TestCase
 			Addition::class => [
 				$elId => $el,
 			],
-			Node::class => array(
+			Node::class => [
 				$elId => $el,
 				$oneId => $one,
-				$twoId => $two
-			),
-			Decimal::class => array(
+				$twoId => $two,
+			],
+			Decimal::class => [
 				$oneId => $one,
-				$twoId => $two
-			),
+				$twoId => $two,
+			],
+			RealNumber::class => [
+				$oneId => $one,
+				$twoId => $two,
+			]
 		], [
 			$oneId => $el,
 			$twoId => $el,
