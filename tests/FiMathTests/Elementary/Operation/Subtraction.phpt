@@ -29,7 +29,7 @@ class SubtractionTest extends Tester\TestCase
 {
 
 	/**
-	 * (1 + 2) * (4 - (3 + 2))
+	 * (1 - 2) * (4 + (3 - 2))
 	 */
 	public function dataReplaceNode()
 	{
