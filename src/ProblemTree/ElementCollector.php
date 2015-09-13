@@ -48,6 +48,7 @@ class ElementCollector extends ProblemVisitor
 
 		$this->queue = [$rootElement];
 		while ($element = array_shift($this->queue)) {
+			/** @var Element $element */
 			$element->accept($this);
 		}
 
