@@ -60,4 +60,20 @@ trait BinaryOperation
 		];
 	}
 
+
+
+	public function copyWithReplaced(Node $original, Node $replacement)
+	{
+		$copy = clone $this;
+
+		if ($original === $copy->left) {
+			$copy->left = $replacement;
+		}
+		if ($original === $copy->right) {
+			$copy->right = $replacement;
+		}
+
+		return $copy;
+	}
+
 }

@@ -5,6 +5,7 @@ namespace FiMath\Elementary\Type;
 use Brick\Math\BigRational;
 use FiMath\Node;
 use FiMath\Elementary\Numbers\RealNumber;
+use FiMath\NotSupportedException;
 use FiMath\ProblemVisitor;
 
 
@@ -72,6 +73,13 @@ class Fraction implements Node, RealNumber
 	public function getChildNodes()
 	{
 		return [];
+	}
+
+
+
+	public function copyWithReplaced(Node $original, Node $replacement)
+	{
+		throw new NotSupportedException;
 	}
 
 }

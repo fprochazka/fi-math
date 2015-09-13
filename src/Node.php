@@ -25,4 +25,13 @@ interface Node
 	 */
 	public function getChildNodes();
 
+
+
+	/**
+	 * @param Node $original
+	 * @param Node $replacement
+	 * @return static
+	 */
+	public function copyWithReplaced(Node $original, Node $replacement);
+
 }
