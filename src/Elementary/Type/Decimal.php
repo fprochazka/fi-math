@@ -37,9 +37,6 @@ class Decimal implements Node, RealNumber
 
 
 
-	/**
-	 * @return BigNumber
-	 */
 	public function toNumber()
 	{
 		return BigNumber::of($this->getValue());
