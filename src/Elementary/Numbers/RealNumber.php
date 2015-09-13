@@ -2,7 +2,9 @@
 
 namespace FiMath\Elementary\Numbers;
 
-use Brick\Math\BigNumber;
+use Brick\Math\BigDecimal;
+use Brick\Math\BigInteger;
+use Brick\Math\BigRational;
 
 
 
@@ -13,7 +15,7 @@ interface RealNumber
 {
 
 	/**
-	 * @return BigNumber
+	 * @return BigInteger|BigDecimal|BigRational
 	 */
 	public function toNumber();
 
