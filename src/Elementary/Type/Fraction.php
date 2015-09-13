@@ -4,6 +4,7 @@ namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigRational;
 use FiMath\Element;
+use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\ProblemVisitor;
 
 
@@ -11,7 +12,7 @@ use FiMath\ProblemVisitor;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class Fraction implements Element
+class Fraction implements Element, RealNumber
 {
 
 	/**
@@ -54,10 +55,7 @@ class Fraction implements Element
 
 
 
-	/**
-	 * @return BigRational
-	 */
-	public function toRational()
+	public function toNumber()
 	{
 		return BigRational::nd($this->getNumerator(), $this->getDenominator());
 	}

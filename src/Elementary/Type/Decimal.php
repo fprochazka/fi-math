@@ -4,6 +4,7 @@ namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigNumber;
 use FiMath\Element;
+use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\ProblemVisitor;
 
 
@@ -11,7 +12,7 @@ use FiMath\ProblemVisitor;
 /**
  * @author Filip Procházka <filip@prochazka.su>
  */
-class Decimal implements Element
+class Decimal implements Element, RealNumber
 {
 
 	/**
