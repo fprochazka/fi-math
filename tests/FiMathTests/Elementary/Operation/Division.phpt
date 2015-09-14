@@ -8,11 +8,11 @@ namespace KdybyTests\FiMath\Elementary\Operation;
 
 use FiMath;
 use FiMath\Elementary\Operation as Op;
+use FiMath\Elementary\Type\Addition;
+use FiMath\Elementary\Type\Decimal;
 use FiMath\Elementary\Type\Division;
 use FiMath\Elementary\Type\Subtraction;
-use FiMath\Elementary\Type\Decimal;
-use FiMath\Elementary\Type\Addition;
-use FiMath\ProblemTree\NodeCollector;
+use FiMath\Engine\NodeCollector;
 use Tester;
 use Tester\Assert;
 

@@ -1,10 +1,6 @@
 <?php
 
-namespace FiMath;
-
-use FiMath\ProblemTree\CollectionResult;
-
-
+namespace FiMath\Engine;
 
 /**
  * @author Filip Procházka <filip@prochazka.su>

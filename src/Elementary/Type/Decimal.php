@@ -3,10 +3,10 @@
 namespace FiMath\Elementary\Type;
 
 use Brick\Math\BigNumber;
-use FiMath\Node;
 use FiMath\Elementary\Numbers\RealNumber;
+use FiMath\Engine\Node;
+use FiMath\Engine\ProblemVisitor;
 use FiMath\NotSupportedException;
-use FiMath\ProblemVisitor;
 
 
 

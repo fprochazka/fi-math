@@ -1,8 +1,6 @@
 <?php
 
-namespace FiMath;
-
-
+namespace FiMath\Engine;
 
 /**
  * Marks a class that contains a context of a problem and should now the ways to solve it.

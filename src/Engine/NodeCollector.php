@@ -1,15 +1,13 @@
 <?php
 
-namespace FiMath\ProblemTree;
+namespace FiMath\Engine;
 
-use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
 use FiMath\Elementary\Type\Division;
 use FiMath\Elementary\Type\Fraction;
 use FiMath\Elementary\Type\Multiplication;
 use FiMath\Elementary\Type\Subtraction;
-use FiMath\ProblemVisitor;
 
 
 

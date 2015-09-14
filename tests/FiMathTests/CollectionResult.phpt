@@ -6,11 +6,13 @@
 
 namespace KdybyTests\FiMath;
 
-use FiMath\Elementary\Type\Decimal;
 use FiMath;
-use FiMath\ProblemTree\CollectionResult;
+use FiMath\Elementary\Type\Decimal;
+use FiMath\Engine\CollectionResult;
 use Tester;
 use Tester\Assert;
+
+
 
 require_once __DIR__ . '/../bootstrap.php';
 

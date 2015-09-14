@@ -1,8 +1,7 @@
 <?php
 
-namespace FiMath\ProblemTree;
+namespace FiMath\Engine;
 
-use FiMath\Node;
 use FiMath\InvalidArgumentException;
 
 
@@ -56,7 +55,7 @@ class CollectionResult
 
 
 	/**
-	 * @return \FiMath\Node[]
+	 * @return \FiMath\Engine\Node[]
 	 */
 	public function getAllElements()
 	{
@@ -79,6 +78,21 @@ class CollectionResult
 	public function getByType($type)
 	{
 		return isset($this->types[$type]) ? $this->types[$type] : [];
+	}
+
+
+
+	/**
+	 * @param Node $element
+	 * @return \Generator|Node[]
+	 */
+	public function hasParent(Node $element)
+	{
+		if (!isset($this->list[$id = self::id($element)])) {
+			throw new InvalidArgumentException('The given element is not in this result');
+		}
+
+		return !empty($this->parents[$id]);
 	}
 
 

@@ -2,11 +2,11 @@
 
 namespace FiMath\Elementary\Operation;
 
-use FiMath\Node;
 use FiMath\Elementary\Numbers\RealNumber;
 use FiMath\Elementary\Type;
-use FiMath\ProblemTree\BaseOperation;
-use FiMath\ProblemTree\CollectionResult;
+use FiMath\Engine\BaseOperation;
+use FiMath\Engine\CollectionResult;
+use FiMath\Engine\Node;
 
 
 

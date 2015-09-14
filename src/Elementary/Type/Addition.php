@@ -2,10 +2,10 @@
 
 namespace FiMath\Elementary\Type;
 
-use FiMath\Node;
 use FiMath\Elementary\Behaviour\BinaryOperation;
 use FiMath\Elementary\Numbers\RealNumber;
-use FiMath\ProblemVisitor;
+use FiMath\Engine\Node;
+use FiMath\Engine\ProblemVisitor;
 
 
 

@@ -1,8 +1,6 @@
 <?php
 
-namespace FiMath;
-
-
+namespace FiMath\Engine;
 
 /**
  * Basic unit of problem that is parsed into a tree for transformations.

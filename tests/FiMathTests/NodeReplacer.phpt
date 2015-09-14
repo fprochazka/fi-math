@@ -6,15 +6,16 @@
 
 namespace KdybyTests\FiMath;
 
-use FiMath\Elementary\Type\Multiplication;
-use FiMath\Elementary\Type\Subtraction;
-use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
-use FiMath\ProblemTree\NodeCollector;
-use FiMath\ProblemTree\NodeReplacer;
+use FiMath\Elementary\Type\Multiplication;
+use FiMath\Elementary\Type\Subtraction;
+use FiMath\Engine\NodeCollector;
+use FiMath\Engine\NodeReplacer;
 use Tester;
 use Tester\Assert;
+
+
 
 require_once __DIR__ . '/../bootstrap.php';
 

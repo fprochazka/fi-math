@@ -2,7 +2,7 @@
 
 namespace FiMath\Elementary\Behaviour;
 
-use FiMath\Node;
+use FiMath\Engine\Node;
 
 
 

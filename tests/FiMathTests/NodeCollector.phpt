@@ -7,13 +7,15 @@
 namespace KdybyTests\FiMath;
 
 use FiMath\Elementary\Numbers\RealNumber;
-use FiMath\Node;
 use FiMath\Elementary\Type\Addition;
 use FiMath\Elementary\Type\Decimal;
-use FiMath\ProblemTree\CollectionResult;
-use FiMath\ProblemTree\NodeCollector;
+use FiMath\Engine\CollectionResult;
+use FiMath\Engine\Node;
+use FiMath\Engine\NodeCollector;
 use Tester;
 use Tester\Assert;
+
+
 
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -26,7 +28,7 @@ class NodeCollectorTest extends Tester\TestCase
 {
 
 	/**
-	 * @var NodeCollector
+	 * @var \FiMath\Engine\NodeCollector
 	 */
 	private $collector;
 
